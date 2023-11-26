@@ -1,0 +1,80 @@
+  @media only screen and (max-width: 430px) {
+      .Popcorn {
+          margin: 5px;
+      }
+
+      .Brille3d {
+          margin: 5px;
+      }
+
+      .Butter {
+          width: 150px;
+          height: 150px;
+      }
+  }
+
+  @media only screen and (min-width: 431px) {
+      .Popcorn {
+          margin: 15px;
+      }
+
+      .Brille3d {
+          margin: 15px;
+      }
+
+      .Butter {
+          width: 300px;
+          height: 300px;
+      }
+  }
+
+  body {
+      margin: 0;
+      padding: 0;
+      background-color: #e8bcbb;
+  }
+
+  img {
+      max-width: 900%;
+      height: 80%;
+      overflow: hidden;
+  }
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100vh;
+  }
+
+  .Popcorn {
+      order: 1;
+      flex: 1;
+      align-self: flex-start;
+      width: 400px;
+      height: 200px;
+      border: 2px solid black;
+      margin: 1px;
+      background-color: black;
+      color: azure;
+  }
+
+  .Brille3d {
+      order: 2;
+      flex: 1;
+      align-self: flex-start;
+      width: 400px;
+      height: 200px;
+      border: 2px solid black;
+      margin: 1px;
+      background-color: blueviolet;
+  }
+
+  .Butter {
+      order: 3;
+      width: 400px;
+      height: 400px;
+      border: 2px solid black;
+      margin: 1px;
+      background-color: cadetblue;
+  }

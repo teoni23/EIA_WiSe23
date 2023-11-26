@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: black;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-right: 20px; /* Add some margin to the right */
+    }
+
+    .galaxy-container {
+      position: relative;
+      margin: 20px; /* Adjust margin for the galaxy container */
+      width: 500px; /* Set a fixed width for the galaxy container */
+      height: 500px; /* Set a fixed height for the galaxy container */
+    }
+
+    .black-hole {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: black;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .fibonacci-line {
+      position: absolute;
+      stroke: white;
+      stroke-width: 2;
+    }
+  </style>
+  <title>Galaxy Street</title>
+</head>
+<body>
+  <div class="galaxy-container">
+    <div class="black-hole"></div>
+    <svg class="fibonacci-line">
+      <!-- Create a single path element for the Fibonacci spiral -->
+      <path d="" />
+    </svg>
+  </div>
+
+  <script>
+    const container = document.querySelector('.galaxy-container');
+    const path = document.querySelector('.fibonacci-line path');
+
+    // Calculate Fibonacci sequence
+    function fibonacci(n) {
+      if (n <= 1) return n;
+      return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    // Number of segments for the Fibonacci spiral
+    const numSegments = 100;
+
+    // Build the path data for the Fibonacci spiral
+    let pathData = 'M50 50'; // Move to the starting point
+
+    for (let i = 0; i < numSegments; i++) {
+      const angle = (i * 137.5) * (Math.PI / 180); // Fibonacci angle
+      const length = fibonacci(i) * 2; // Adjust multiplier for length
+      const x = 50 - Math.cos(angle) * length;
+      const y = 50 - Math.sin(angle) * length;
+      pathData += ` L${x} ${y}`; // Line to the next point
+    }
+
+    // Set the path data
+    path.setAttribute('d', pathData);
+  </script>
+</body>
+</html>

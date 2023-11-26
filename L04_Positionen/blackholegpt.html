@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: black;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .galaxy-container {
+      position: relative;
+      margin: 20px; /* Adjust margin for the galaxy container */
+      width: 1280px; /* 2/3 of 1920 */
+      height: 720px; /* 2/3 of 1080 */
+    }
+
+    .black-hole {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: black;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .snail-shape {
+      position: absolute;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+    }
+  </style>
+  <title>Galaxy Street</title>
+</head>
+<body>
+  <div class="galaxy-container">
+    <div class="black-hole"></div>
+    <svg class="snail-shape">
+      <path d="M640 360 C660 340, 680 330, 700 330 C720 330, 750 340, 770 350 C790 360, 820 380, 840 430 C860 480, 870 560, 860 610 C850 660, 830 710, 800 760 C770 810, 730 850, 650 850 C580 850, 520 810, 480 760 C440 710, 420 650, 420 600" />
+    </svg>
+  </div>
+</body>
+</html>
